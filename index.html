@@ -1,0 +1,780 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Practicas</title>
+
+    <link rel="stylesheet" href="assets/css/header.css" />
+    <link rel="stylesheet" href="assets/css/main.css" />
+    <link rel="stylesheet" href="assets/css/sections.css" />
+    <link rel="stylesheet" href="assets/css/footer.css" />
+    <link rel="stylesheet" href="assets/css/form.css">
+
+
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/tokyo-night-dark.css"/>
+    <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
+  </head>
+  <body>
+    <header data-aos="fade-down">
+      <span
+        id="btn-menu"
+        onclick="togglemenu()"
+        class="material-symbols-rounded"
+      >
+        menu
+      </span>
+
+      <figure class="logo-header">
+        <a href="https://kamscript.com"
+          ><img
+            src="https://i.postimg.cc/RFTkVg8c/kamscript-icon.png"
+            alt="Logo KamScript"
+        /></a>
+      </figure>
+
+      <nav class="nav-menu">
+        <ul>
+          <li>
+            <a
+              href="#me"
+              class="option-navbar"
+              onclick="togglemenu()"
+            >
+              <span class="material-symbols-rounded"> face </span>
+              Programador
+            </a>
+          </li>
+          
+          <li>
+            <a
+              href="#ejercicios-matrices"
+              class="option-navbar"
+              onclick="togglemenu()"
+            >
+              <span class="material-symbols-rounded"> data_array </span>
+              Matrices
+            </a>
+          </li>
+
+          <li>
+            <a
+              href="#ejercicios-matrices-multiplicadas"
+              class="option-navbar"
+              onclick="togglemenu()"
+            >
+              <span class="material-symbols-rounded"> data_array </span>
+              Multiplicar Matrices
+            </a>
+          </li>
+        </ul>
+      </nav>
+    </header>
+
+    <main>
+      <section class="home" data-aos="fade-up">
+        <figure>
+          <img src="assets/img/img-home.webp" alt="Programador" />
+        </figure>
+
+        <div class="text-home">
+          <h1>Ejercicios de <span>JavaScript.</span></h1>
+          <p>
+            En esta ocasión resolveremos los ejercicios de JavaScript de
+            afianzamiento de la asignatura de programación web II propuestos por
+            el Ing. JIMMY ALEXANDER VERGARA RODRIGUEZ.
+          </p>
+          <a href="#ejercicios-nivel-basicos">VER EJERCICIOS</a>
+        </div>
+      </section>
+
+      <section class="about exercises anim-exercises" id="me">
+        <div class="text-about" data-aos="flip-right">
+          <h2 class="titulo-section">
+            <span class="material-symbols-rounded"> code </span>
+            Camilo Grimaldo Caviedes
+          </h2>
+          <p>
+            <span>Autor developer</span>
+            <span>Técnico Profesional Programación Web</span>
+            <span>Programación Web II</span>
+            <span>III-C / Ñero-C</span>
+          </p>
+        </div>
+        <figure class="img-about" data-aos="flip-left">
+          <img src="assets/img/foto-mia.webp" alt="Camilo Grimaldo">
+        </figure>
+      </section>
+
+      <section class="exercises anim-exercises" id="ejercicios-matrices">
+        <h2 class="titulo-section">
+          <span class="material-symbols-rounded"> data_array </span>
+          Ejercicios de Matrices
+        </h2>
+
+        <form class="form-matrices exercises">
+          <h3>Matriz Original</h3>
+          <div>
+            <input type="number" class="number A1" autocomplete="off">
+            <input type="number" class="number A2" autocomplete="off">
+            <input type="number" class="number A3" autocomplete="off"> 
+          </div>
+          <div>
+            <input type="number" class="number B1" autocomplete="off">
+            <input type="number" class="number B2" autocomplete="off">
+            <input type="number" class="number B3" autocomplete="off">
+          </div>
+          <div>
+            <input type="number" class="number C1" autocomplete="off">
+            <input type="number" class="number C2" autocomplete="off">
+            <input type="number" class="number C3" autocomplete="off">
+          </div>
+          <button type="button" id="btnTriki">Ejecutar</button>
+        </form>
+
+        <div class="resultados">
+          <form class="form-matrices exercises sumas">
+            <h3 class="title-sumas">Triki</h3>
+            <div>
+              <input class="hidden-none number" disabled>
+              <input class="hidden-none number" disabled>
+              <input class="hidden-none number" disabled>
+              <input class="hidden number" value="" id="diag2" disabled>
+            </div>
+            <div>
+              <input type="number" class="number A1" autocomplete="off" disabled>
+              <input type="number" class="number A2" autocomplete="off" disabled>
+              <input type="number" class="number A3" autocomplete="off" disabled> 
+              <input class="hidden number" id="sum1" value="" disabled>
+              <!---->
+            </div>
+            <div>
+              <input type="number" class="number B1" autocomplete="off" disabled>
+              <input type="number" class="number B2" autocomplete="off" disabled>
+              <input type="number" class="number B3" autocomplete="off" disabled>
+              <input class="hidden number" id="sum2" value="" disabled>
+              <!---->
+            </div>
+            <div>
+              <input type="number" class="number C1" autocomplete="off" disabled>
+              <input type="number" class="number C2" autocomplete="off" disabled>
+              <input type="number" class="number C3" autocomplete="off" disabled>
+              <input class="hidden number" id="sum3" value="" disabled>
+              <!---->
+            </div>
+            <div>
+              <input class="hidden number" id="sum4" value="" disabled>
+              <input class="hidden number" id="sum5" value="" disabled>
+              <input class="hidden number" id="sum6" value="" disabled>
+              <input class="hidden number" value="" id="diag1" disabled>
+              <!---->
+            </div>
+          </form>
+
+          <form class="form-matrices exercises">
+            <h3>Traspuesta</h3>
+            <div>
+              <input type="number" class="number trasA1" autocomplete="off" disabled>
+              <input type="number" class="number trasA2" autocomplete="off" disabled>
+              <input type="number" class="number trasA3" autocomplete="off" disabled> 
+            </div>
+            <div>
+              <input type="number" class="number trasB1" autocomplete="off" disabled>
+              <input type="number" class="number trasB2" autocomplete="off" disabled>
+              <input type="number" class="number trasB3" autocomplete="off" disabled>
+            </div>
+            <div>
+              <input type="number" class="number trasC1" autocomplete="off" disabled>
+              <input type="number" class="number trasC2" autocomplete="off" disabled>
+              <input type="number" class="number trasC3" autocomplete="off" disabled>
+            </div>
+          </form>
+
+          <form class="form-matrices exercises">
+            <h3>Justicia Divina</h3>
+            <div>
+              <input type="number" class="number justDivA1" autocomplete="off" disabled>
+              <input type="number" class="number justDivA2" autocomplete="off" disabled>
+              <input type="number" class="number justDivA3" autocomplete="off" disabled> 
+            </div>
+            <div>
+              <input type="number" class="number justDivB1" autocomplete="off" disabled>
+              <input type="number" class="number justDivB2" autocomplete="off" disabled>
+              <input type="number" class="number justDivB3" autocomplete="off" disabled>
+            </div>
+            <div>
+              <input type="number" class="number justDivC1" autocomplete="off" disabled>
+              <input type="number" class="number justDivC2" autocomplete="off" disabled>
+              <input type="number" class="number justDivC3" autocomplete="off" disabled>
+            </div>
+          </form>
+        </div>
+      </section>
+
+      <section class="exercises codigo" id="ejercicios-nivel-basicos">
+        <div class="exercises-item">
+          <div class="titulo-item">
+            <h3>Suma de columnas filas y diagonales; Traspuesta y Justicia Divina</h3>
+            <span class="material-symbols-rounded chevron_titulo">
+              expand_more
+            </span>
+          </div>
+          <div class="contenido-item">
+            <pre class="codigo-contenido-item">
+              <code>&lt;html&gt;
+  &lt;section class="exercises anim-exercises" id="ejercicios-matrices">
+    &lt;h2 class="titulo-section">
+      &lt;span class="material-symbols-rounded"> data_array &lt;/span>
+      Ejercicios de Matrices
+    &lt;/h2>
+
+    &lt;form class="form-matrices exercises">
+      &lt;h3>Matriz Original&lt;/h3>
+      &lt;div>
+        &lt;input type="number" class="number A1" autocomplete="off">
+        &lt;input type="number" class="number A2" autocomplete="off">
+        &lt;input type="number" class="number A3" autocomplete="off"> 
+      &lt;/div>
+      &lt;div>
+        &lt;input type="number" class="number B1" autocomplete="off">
+        &lt;input type="number" class="number B2" autocomplete="off">
+        &lt;input type="number" class="number B3" autocomplete="off">
+      &lt;/div>
+      &lt;div>
+        &lt;input type="number" class="number C1" autocomplete="off">
+        &lt;input type="number" class="number C2" autocomplete="off">
+        &lt;input type="number" class="number C3" autocomplete="off">
+      &lt;/div>
+      &lt;button type="button" id="btnTriki">Ejecutar&lt;/button>
+    &lt;/form>
+
+    &lt;div class="resultados">
+      &lt;form class="form-matrices exercises sumas">
+        &lt;h3 class="title-sumas">Triki&lt;/h3>
+        &lt;div>
+          &lt;input class="hidden-none number" disabled>
+          &lt;input class="hidden-none number" disabled>
+          &lt;input class="hidden-none number" disabled>
+          &lt;input class="hidden number" value="" id="diag2" disabled>
+        &lt;/div>
+        &lt;div>
+          &lt;input type="number" class="number A1" autocomplete="off" disabled>
+          &lt;input type="number" class="number A2" autocomplete="off" disabled>
+          &lt;input type="number" class="number A3" autocomplete="off" disabled> 
+          &lt;input class="hidden number" id="sum1" value="" disabled>
+        &lt;/div>
+        &lt;div>
+          &lt;input type="number" class="number B1" autocomplete="off" disabled>
+          &lt;input type="number" class="number B2" autocomplete="off" disabled>
+          &lt;input type="number" class="number B3" autocomplete="off" disabled>
+          &lt;input class="hidden number" id="sum2" value="" disabled>
+        &lt;/div>
+        &lt;div>
+          &lt;input type="number" class="number C1" autocomplete="off" disabled>
+          &lt;input type="number" class="number C2" autocomplete="off" disabled>
+          &lt;input type="number" class="number C3" autocomplete="off" disabled>
+          &lt;input class="hidden number" id="sum3" value="" disabled>
+        &lt;/div>
+        &lt;div>
+          &lt;input class="hidden number" id="sum4" value="" disabled>
+          &lt;input class="hidden number" id="sum5" value="" disabled>
+          &lt;input class="hidden number" id="sum6" value="" disabled>
+          &lt;input class="hidden number" value="" id="diag1" disabled>
+        &lt;/div>
+      &lt;/form>
+
+      &lt;form class="form-matrices exercises">
+        &lt;h3>Traspuesta&lt;/h3>
+        &lt;div>
+          &lt;input type="number" class="number trasA1" autocomplete="off" disabled>
+          &lt;input type="number" class="number trasA2" autocomplete="off" disabled>
+          &lt;input type="number" class="number trasA3" autocomplete="off" disabled> 
+        &lt;/div>
+        &lt;div>
+          &lt;input type="number" class="number trasB1" autocomplete="off" disabled>
+          &lt;input type="number" class="number trasB2" autocomplete="off" disabled>
+          &lt;input type="number" class="number trasB3" autocomplete="off" disabled>
+        &lt;/div>
+        &lt;div>
+          &lt;input type="number" class="number trasC1" autocomplete="off" disabled>
+          &lt;input type="number" class="number trasC2" autocomplete="off" disabled>
+          &lt;input type="number" class="number trasC3" autocomplete="off" disabled>
+        &lt;/div>
+      &lt;/form>
+
+      &lt;form class="form-matrices exercises">
+        &lt;h3>Justicia Divina&lt;/h3>
+        &lt;div>
+          &lt;input type="number" class="number justDivA1" autocomplete="off" disabled>
+          &lt;input type="number" class="number justDivA2" autocomplete="off" disabled>
+          &lt;input type="number" class="number justDivA3" autocomplete="off" disabled> 
+        &lt;/div>
+        &lt;div>
+          &lt;input type="number" class="number justDivB1" autocomplete="off" disabled>
+          &lt;input type="number" class="number justDivB2" autocomplete="off" disabled>
+          &lt;input type="number" class="number justDivB3" autocomplete="off" disabled>
+        &lt;/div>
+        &lt;div>
+          &lt;input type="number" class="number justDivC1" autocomplete="off" disabled>
+          &lt;input type="number" class="number justDivC2" autocomplete="off" disabled>
+          &lt;input type="number" class="number justDivC3" autocomplete="off" disabled>
+        &lt;/div>
+      &lt;/form>
+    &lt;/div>
+  &lt;/section>
+&lt;/html&gt;
+              </code>
+              <code class="scrollmodificdo">&lt;script>
+  window.addEventListener('DOMContentLoaded', function () {
+    let matrizOriginal = JSON.parse(localStorage.getItem('matrizOriginal'));
+
+    if (matrizOriginal) {
+      let letras = ['A', 'B', 'C'];
+
+      for (let i = 0; i < 3; i++) {
+        for (let j = 0; j < 3; j++) {
+          document.querySelectorAll('.' + letras[i] + (j + 1)).forEach(function(input) {
+            input.value = matrizOriginal[i][j];
+          });
+        }
+      }
+    }
+  });
+      
+
+  //Si no ay matriz creada hace una con los datos, ademas que sobreescribe si hacen un cambio
+  document.getElementById("btnTriki").addEventListener("click", function () {
+    document.querySelector('.resultados').style.height = '80vh';
+    var A1 = parseFloat(document.querySelector(".A1").value);
+    var A2 = parseFloat(document.querySelector(".A2").value);
+    var A3 = parseFloat(document.querySelector(".A3").value);
+
+    var B1 = parseFloat(document.querySelector(".B1").value);
+    var B2 = parseFloat(document.querySelector(".B2").value);
+    var B3 = parseFloat(document.querySelector(".B3").value);
+
+    var C1 = parseFloat(document.querySelector(".C1").value);
+    var C2 = parseFloat(document.querySelector(".C2").value);
+    var C3 = parseFloat(document.querySelector(".C3").value);
+
+    let matrizA = [A1, A2, A3];
+    let matrizB = [B1, B2, B3];
+    let matrizC = [C1, C2, C3];
+
+    let matrizOriginal = [matrizA, matrizB, matrizC];
+
+    localStorage.setItem('matrizOriginal', JSON.stringify(matrizOriginal));
+
+    
+    if (matrizOriginal) {
+      let letras = ['A', 'B', 'C'];
+
+      for (let i = 0; i < 3; i++) {
+        for (let j = 0; j < 3; j++) {
+          document.querySelectorAll('.' + letras[i] + (j + 1)).forEach(function(input) {
+            input.value = matrizOriginal[i][j];
+          });
+        }
+      }
+    }
+
+
+
+
+
+
+    // suma de las filas
+    for (let x = 0; x < matrizOriginal.length; x++) {
+      var sumfila = 0;
+      var id = x + 1;
+      for (let i = 0; i < matrizA.length; i++) {
+        sumfila += matrizOriginal[x][i];
+      }
+      document.getElementById('sum' + id).value = sumfila;
+    }
+
+    //Suma columnas
+    for (let x = 0; x < matrizOriginal[0].length; x++) {
+      var sumColumna = 0;
+      var id = x + 4;
+      for (let i = 0; i < matrizOriginal.length; i++) {
+        sumColumna += matrizOriginal[i][x];
+      }
+      document.getElementById('sum' + id).value = sumColumna;
+    }
+
+    //Suma diagonal 1
+    var sumDiag = 0;
+    for (let x = 0; x < matrizOriginal.length; x++) {
+      sumDiag += matrizOriginal[x][x];
+    }
+    document.getElementById('diag1').value = sumDiag;
+
+    //Suma diagonal 2
+    sumDiag = 0;
+    for (let x = 0; x < matrizOriginal.length; x++) {
+      sumDiag += matrizOriginal[x][matrizOriginal.length - (x + 1)]
+    }
+    document.getElementById('diag2').value = sumDiag;
+
+
+
+
+
+
+    //Matriz traspuesta
+    let matrizTranspuesta = [];
+    for (let i = 0; i < matrizOriginal.length; i++) {
+        matrizTranspuesta[i] = [];
+        for (let j = 0; j < matrizOriginal.length; j++) {
+            matrizTranspuesta[i][j] = matrizOriginal[j][i];
+        }
+    }
+
+    //Imprime matriz traspuesta 
+    if (matrizTranspuesta) {
+      let letras = ['A', 'B', 'C'];
+
+      for (let i = 0; i < 3; i++) {
+        for (let j = 0; j < 3; j++) {
+          document.querySelectorAll('.tras' + letras[i] + (j + 1)).forEach(function(input) {
+            input.value = matrizTranspuesta[i][j];
+          });
+        }
+      }
+    }
+
+
+
+
+
+
+    //Justicia divina
+    let temp =matrizOriginal[0][0];
+    matrizOriginal[0][0] =matrizOriginal[2][2];
+    matrizOriginal[2][2] = temp;
+    temp =matrizOriginal[1][0];
+    matrizOriginal[1][0] =matrizOriginal[1][2];
+    matrizOriginal[1][2] = temp;
+    temp =matrizOriginal[2][0];
+    matrizOriginal[2][0] =matrizOriginal[0][2];
+    matrizOriginal[0][2] = temp;
+    temp =matrizOriginal[0][1];
+    matrizOriginal[0][1] =matrizOriginal[2][1];
+    matrizOriginal[2][1] = temp;
+
+    //Imprime matriz Justicia divina 
+    if (matrizOriginal) {
+      let letras = ['A', 'B', 'C'];
+
+      for (let i = 0; i < 3; i++) {
+        for (let j = 0; j < 3; j++) {
+          document.querySelectorAll('.justDiv' + letras[i] + (j + 1)).forEach(function(input) {
+            input.value = matrizOriginal[i][j];
+          });
+        }
+      }
+    }
+  });
+&lt;/script>                
+              </code>
+            </pre>
+          </div>
+        </div>
+      </section>
+
+      <section class="exercises anim-exercises" id="ejercicios-matrices-multiplicadas">
+        <h2 class="titulo-section">
+          <span class="material-symbols-rounded"> data_array </span>
+          Multiplicación de Matrices
+        </h2>
+
+        <div class="matrices-multiplicacion">
+          <form class="form-matrices exercises">
+            <h3>Matriz 1</h3>
+            <div>
+              <input type="number" class="number M1A1" autocomplete="off">
+              <input type="number" class="number M1A2" autocomplete="off">
+              <input type="number" class="number M1A3" autocomplete="off"> 
+            </div>
+            <div>
+              <input type="number" class="number M1B1" autocomplete="off">
+              <input type="number" class="number M1B2" autocomplete="off">
+              <input type="number" class="number M1B3" autocomplete="off">
+            </div>
+            <div>
+              <input type="number" class="number M1C1" autocomplete="off">
+              <input type="number" class="number M1C2" autocomplete="off">
+              <input type="number" class="number M1C3" autocomplete="off">
+            </div>
+          </form>
+
+          <span class="mark-x">x</span>
+
+          <form class="form-matrices exercises">
+            <h3>Matriz 2</h3>
+            <div>
+              <input type="number" class="number M2A1" autocomplete="off">
+              <input type="number" class="number M2A2" autocomplete="off">
+              <input type="number" class="number M2A3" autocomplete="off"> 
+            </div>
+            <div>
+              <input type="number" class="number M2B1" autocomplete="off">
+              <input type="number" class="number M2B2" autocomplete="off">
+              <input type="number" class="number M2B3" autocomplete="off">
+            </div>
+            <div>
+              <input type="number" class="number M2C1" autocomplete="off">
+              <input type="number" class="number M2C2" autocomplete="off">
+              <input type="number" class="number M2C3" autocomplete="off">
+            </div>
+          </form>
+        </div>
+
+        <button type="button" class="btnSubmit" id="btnMult">Ejecutar</button>
+
+        <div class="resultado">
+          <form class="form-matrices exercises">
+            <h3>Matriz M1 x M2</h3>
+            <div>
+              <input type="number" class="number prodA1" autocomplete="off" disabled>
+              <input type="number" class="number prodA2" autocomplete="off" disabled>
+              <input type="number" class="number prodA3" autocomplete="off" disabled> 
+            </div>
+            <div>
+              <input type="number" class="number prodB1" autocomplete="off" disabled>
+              <input type="number" class="number prodB2" autocomplete="off" disabled>
+              <input type="number" class="number prodB3" autocomplete="off" disabled>
+            </div>
+            <div>
+              <input type="number" class="number prodC1" autocomplete="off" disabled>
+              <input type="number" class="number prodC2" autocomplete="off" disabled>
+              <input type="number" class="number prodC3" autocomplete="off" disabled>
+            </div>
+          </form>
+        </div>
+      </section>
+
+      <section class="exercises codigo" id="ejercicios-nivel-basicos">
+        <div class="exercises-item">
+          <div class="titulo-item">
+            <h3>Multiplicación de matrices</h3>
+            <span class="material-symbols-rounded chevron_titulo">
+              expand_more
+            </span>
+          </div>
+          <div class="contenido-item">
+            <pre class="codigo-contenido-item">
+              <code>&lt;html&gt;
+  &lt;section class="exercises anim-exercises" id="ejercicios-matrices-multiplicadas">
+    &lt;h2 class="titulo-section">
+      &lt;span class="material-symbols-rounded"> data_array &lt;/span>
+      Multiplicación de Matrices
+    &lt;/h2>
+    &lt;div class="matrices-multiplicacion">
+      &lt;form class="form-matrices exercises">
+        &lt;h3>Matriz 1&lt;/h3>
+        &lt;div>
+          &lt;input type="number" class="number M1A1" autocomplete="off">
+          &lt;input type="number" class="number M1A2" autocomplete="off">
+          &lt;input type="number" class="number M1A3" autocomplete="off"> 
+        &lt;/div>
+        &lt;div>
+          &lt;input type="number" class="number M1B1" autocomplete="off">
+          &lt;input type="number" class="number M1B2" autocomplete="off">
+          &lt;input type="number" class="number M1B3" autocomplete="off">
+        &lt;/div>
+        &lt;div>
+          &lt;input type="number" class="number M1C1" autocomplete="off">
+          &lt;input type="number" class="number M1C2" autocomplete="off">
+          &lt;input type="number" class="number M1C3" autocomplete="off">
+        &lt;/div>
+      &lt;/form>
+      &lt;span class="mark-x">x&lt;/span>
+      &lt;form class="form-matrices exercises">
+        &lt;h3>Matriz 2&lt;/h3>
+        &lt;div>
+          &lt;input type="number" class="number M2A1" autocomplete="off">
+          &lt;input type="number" class="number M2A2" autocomplete="off">
+          &lt;input type="number" class="number M2A3" autocomplete="off"> 
+        &lt;/div>
+        &lt;div>
+          &lt;input type="number" class="number M2B1" autocomplete="off">
+          &lt;input type="number" class="number M2B2" autocomplete="off">
+          &lt;input type="number" class="number M2B3" autocomplete="off">
+        &lt;/div>
+        &lt;div>
+          &lt;input type="number" class="number M2C1" autocomplete="off">
+          &lt;input type="number" class="number M2C2" autocomplete="off">
+          &lt;input type="number" class="number M2C3" autocomplete="off">
+        &lt;/div>
+      &lt;/form>
+    &lt;/div>
+    &lt;button type="button" class="btnSubmit" id="btnMult">Ejecutar&lt;/button>
+    &lt;div class="resultado">
+      &lt;form class="form-matrices exercises">
+        &lt;h3>Matriz M1 x M2&lt;/h3>
+        &lt;div>
+          &lt;input type="number" class="number prodA1" autocomplete="off" disabled>
+          &lt;input type="number" class="number prodA2" autocomplete="off" disabled>
+          &lt;input type="number" class="number prodA3" autocomplete="off" disabled> 
+        &lt;/div>
+        &lt;div>
+          &lt;input type="number" class="number prodB1" autocomplete="off" disabled>
+          &lt;input type="number" class="number prodB2" autocomplete="off" disabled>
+          &lt;input type="number" class="number prodB3" autocomplete="off" disabled>
+        &lt;/div>
+        &lt;div>
+          &lt;input type="number" class="number prodC1" autocomplete="off" disabled>
+          &lt;input type="number" class="number prodC2" autocomplete="off" disabled>
+          &lt;input type="number" class="number prodC3" autocomplete="off" disabled>
+        &lt;/div>
+      &lt;/form>
+    &lt;/div>
+  &lt;/section>
+&lt;/html&gt;
+              </code>
+              <code class="scrollmodificdo">&lt;script>
+  window.addEventListener('DOMContentLoaded', function () {
+    let matriz1 = JSON.parse(localStorage.getItem('matriz1'));
+    let matriz2 = JSON.parse(localStorage.getItem('matriz2'));
+
+    if (matriz1) {
+      let letras = ['A', 'B', 'C'];
+
+      for (let i = 0; i < 3; i++) {
+        for (let j = 0; j < 3; j++) {
+          document.querySelector('.M1' + letras[i] + (j + 1)).value = matriz1[i][j];
+        }
+      }
+    }
+
+    if (matriz2) {
+      let letras = ['A', 'B', 'C'];
+
+      for (let i = 0; i < 3; i++) {
+        for (let j = 0; j < 3; j++) {
+          document.querySelector('.M2' + letras[i] + (j + 1)).value = matriz2[i][j];
+        }
+      }
+    }
+  });
+
+  document.getElementById("btnMult").addEventListener("click", function () {
+      document.querySelector('.resultado').style.height = '80vh';
+      var M1A1 = parseFloat(document.querySelector(".M1A1").value);
+      var M1A2 = parseFloat(document.querySelector(".M1A2").value);
+      var M1A3 = parseFloat(document.querySelector(".M1A3").value);
+    
+      var M1B1 = parseFloat(document.querySelector(".M1B1").value);
+      var M1B2 = parseFloat(document.querySelector(".M1B2").value);
+      var M1B3 = parseFloat(document.querySelector(".M1B3").value);
+    
+      var M1C1 = parseFloat(document.querySelector(".M1C1").value);
+      var M1C2 = parseFloat(document.querySelector(".M1C2").value);
+      var M1C3 = parseFloat(document.querySelector(".M1C3").value);
+    
+      let matrizA1 = [M1A1, M1A2, M1A3];
+      let matrizB1 = [M1B1, M1B2, M1B3];
+      let matrizC1 = [M1C1, M1C2, M1C3];
+    
+      let matriz1 = [matrizA1, matrizB1, matrizC1];
+    
+      localStorage.setItem('matriz1', JSON.stringify(matriz1));
+
+      var letras = ['A', 'B', 'C'];
+      
+      for (let i = 0; i < 3; i++) {
+        for (let j = 0; j < 3; j++) {
+          document.querySelector('.M1' + letras[i] + (j + 1)).value = matriz1[i][j];
+        }
+      }
+
+      var M2A1 = parseFloat(document.querySelector(".M2A1").value);
+      var M2A2 = parseFloat(document.querySelector(".M2A2").value);
+      var M2A3 = parseFloat(document.querySelector(".M2A3").value);
+    
+      var M2B1 = parseFloat(document.querySelector(".M2B1").value);
+      var M2B2 = parseFloat(document.querySelector(".M2B2").value);
+      var M2B3 = parseFloat(document.querySelector(".M2B3").value);
+
+      var M2C1 = parseFloat(document.querySelector(".M2C1").value);
+      var M2C2 = parseFloat(document.querySelector(".M2C2").value);
+      var M2C3 = parseFloat(document.querySelector(".M2C3").value);
+    
+      let matrizA2 = [M2A1, M2A2, M2A3];
+      let matrizB2 = [M2B1, M2B2, M2B3];
+      let matrizC2 = [M2C1, M2C2, M2C3];
+    
+      let matriz2 = [matrizA2, matrizB2, matrizC2];
+    
+      localStorage.setItem('matriz2', JSON.stringify(matriz2));
+      
+      for (let i = 0; i < 3; i++) {
+        for (let j = 0; j < 3; j++) {
+          document.querySelector('.M2' + letras[i] + (j + 1)).value = matriz2[i][j];
+        }
+      }
+
+
+      let multMatriz = [];
+      for (let i = 0; i < matrizA1.length; i++) {
+          multMatriz[i] = [];
+          for (let j = 0; j < matrizA1.length; j++) {
+              multMatriz[i][j] = 0;
+              for (let k = 0; k < matrizA1.length; k++) {
+                  multMatriz[i][j] += matriz1[i][k] * matriz2[k][j];
+              }
+          }
+      }
+      console.log(multMatriz);
+      if (multMatriz) {
+          let letras = ['A', 'B', 'C'];
+      
+          for (let i = 0; i < 3; i++) {
+            for (let j = 0; j < 3; j++) {
+              document.querySelectorAll('.prod' + letras[i] + (j + 1)).forEach(function(input) {
+                input.value = multMatriz[i][j];
+              });
+            }
+          }
+        }
+  });
+&lt;/script>                
+              </code>
+            </pre>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <figure class="logo-header">
+        <a href="https://kamscript.com"
+          ><img
+            src="https://i.postimg.cc/RFTkVg8c/kamscript-icon.png"
+            alt="Logo KamScript"
+        /></a>
+      </figure>
+      <h2>KamScript</h2>
+    </footer>
+
+    <script src="assets/js/main.js"></script>
+    <script src="assets/js/matriz.js"></script>
+    <script src="assets/js/mult-matriz.js"></script>
+
+    
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
+    <script>
+      AOS.init();
+      hljs.highlightAll();
+    </script>
+
+    <script type="text/javascript" src="//code.jquery.com/jquery-1.11.0.min.js"></script>
+    <script type="text/javascript" src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+    <script src="assets/js/slider.js"></script>
+</body>
+</html>

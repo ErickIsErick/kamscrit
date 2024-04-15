@@ -1,0 +1,155 @@
+.form-matrices {
+    width: fit-content;
+    max-width: 100%;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.form-matrices div {
+    margin: 0 auto;
+    width: fit-content;
+    display: flex;
+    gap: 1rem;
+}
+
+.number {
+    width: 2.5rem;
+    aspect-ratio: 1 / 1;
+    text-align: center;
+    outline: none;
+    font-size: 1.2rem;
+    background: none;
+    color: #f8f8f8;
+    border: 2px solid rgb(248, 248, 248, .3);
+}
+
+.hidden {
+    border-color: rgb(248, 248, 248, .1);
+}
+
+.hidden-none {
+    border-color: transparent;
+}
+
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+.form-matrices button {
+    width: 100% !important;
+}
+
+.sumas {
+    position: relative;
+    top: -2.5rem;
+}
+
+.title-sumas {
+    position: relative;
+    top: 2.5rem;
+}
+
+.resultados, .resultado {
+    width: 100%;
+    margin: 0 auto;
+    padding: 2rem 0;
+    height: 0;
+    overflow: hidden;
+    transition: .8s all;
+}
+
+.resultados .container{
+    position: relative;
+    display: flex;
+    justify-content: start;
+    margin: 0 auto;
+    gap: 2rem;
+}
+
+.resultados .container .form-matrices {
+    width: 80vw !important;
+}
+
+.form-matrices h3 {
+    font-family: 'Poppins-bold';
+    text-align: center;
+    color: #f8f8f8;
+    margin-bottom: 2rem;
+}
+
+.form-matrices div {
+    margin-top: 1rem;
+}
+
+.slick-dots {
+  display: flex !important;
+  justify-content: center;
+  list-style: none;
+  padding: 0;
+  margin-top: 1.5rem;
+}
+
+.slick-dots li {
+  margin: 0 .5rem;
+}
+
+.slick-dots li.slick-active button {
+  background-color: #1465bb;
+}
+.slick-dots li button {
+  width: 10px;
+  height: 10px;
+  border: none;
+  border-radius: 50%;
+  background-color: #ccc;
+  cursor: pointer;
+  color: transparent;
+}
+
+.slick-slider {
+    flex-direction: column;
+}
+
+#ejercicios-matrices,
+#ejercicios-matrices-multiplicadas {
+    border: 1px solid rgb(20, 101, 187, .4);
+    border-radius: 1rem;
+    margin-top: 5rem;
+}
+
+.matrices-multiplicacion {
+    width: 100%;
+    display: flex;
+}
+
+.btnSubmit {
+    font-family: "Poppins-semibold";
+    font-size: 0.8rem;
+    text-decoration: none;
+    background-color: #8400ff;
+    width: fit-content;
+    padding: 0.5rem 1.5rem;
+    color: #f8f8f8;
+    border-radius: 0.5rem;
+    border: none;
+    margin: 0 auto 2rem auto;
+}
+
+.mark-x {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    width: fit-content;
+    color: #f8f8f8;
+    font-family: 'Poppins-bold';
+    font-size: 1.5rem;
+}
+
+.codigo{
+    padding: 0;
+    gap: 0;
+}

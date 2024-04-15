@@ -1,0 +1,252 @@
+main {
+  display: flex;
+  flex-direction: column;
+  gap: 5rem;
+}
+
+.home {
+  height: 100vh;
+  width: 80%;
+  margin: 1px solid red;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.home figure {
+  width: 50%;
+}
+
+.home figure img {
+  width: 100%;
+  filter: drop-shadow(0 0 0.4rem rgb(197, 1, 226, 0.5));
+}
+
+.text-home {
+  width: 45%;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+}
+
+.text-home h1,
+.text-home span {
+  font-family: "Poppins-bold";
+  font-size: 2rem;
+  color: #f8f8f8;
+  line-height: 2.2rem;
+}
+
+.text-home h1 span {
+  color: #f7df1e;
+  font-size: 2.2rem;
+}
+
+.text-home p {
+  font-size: 0.9rem;
+  color: #c8c8c8;
+}
+
+.text-home a {
+  font-family: "Poppins-semibold";
+  font-size: 0.8rem;
+  text-decoration: none;
+  background-color: #8400ff;
+  width: fit-content;
+  padding: 0.5rem 1.5rem;
+  color: #f8f8f8;
+  border-radius: 0.5rem;
+}
+
+@media (max-width: 800px) {
+  .home {
+    padding-top: 15vh;
+    height: auto !important;
+    flex-direction: column-reverse !important;
+    gap: 5rem;
+  }
+
+  .text-home,
+  .home figure {
+    width: 80%;
+  }
+}
+
+/*-----------------------------------------------------------*/
+
+.exercises {
+  width: 80%;
+  margin: 0 auto;
+  padding-top: 10vh;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.titulo-section {
+  color: #f8f8f8;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: clamp(1.5rem, 1.143rem + 0.952vw, 2rem);
+  font-family: "Poppins-bold";
+  display: flex;
+  line-height: clamp(1.7rem, 1.343rem + 0.952vw, 2.2rem);
+}
+
+.titulo-section span {
+  font-size: 2.3rem;
+}
+
+.exercises-item {
+  width: calc(100% - 2rem);
+  height: 2rem;
+  padding: 1rem;
+  overflow: hidden;
+  border: 1px solid rgb(255, 255, 255, 0.3);
+  box-shadow: 0 0 0.5rem rgb(132, 0, 255, 0.2);
+  border-radius: 0.5rem;
+  transition: 0.3s ease !important;
+}
+
+.toggle_item {
+  height: 60vh !important;
+  overflow-y: scroll;
+}
+
+@media (min-width: 800px) {
+  .toggle_item::-webkit-scrollbar {
+    width: 8px; /* width of the entire scrollbar */
+  }
+
+  .toggle_item::-webkit-scrollbar-track {
+    background: transparent; /* color of the tracking area */
+  }
+
+  .toggle_item::-webkit-scrollbar-thumb {
+    background-color: #8400ff; /* color of the scroll thumb */
+    border-radius: 0.5rem;
+  }
+}
+
+.titulo-item {
+  height: 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  cursor: pointer;
+}
+
+.titulo-item h3,
+.titulo-item span {
+  color: #f8f8f8;
+  font-size: 1.1rem;
+}
+
+.titulo-item span {
+  font-size: 1.5rem;
+}
+
+.contenido-item {
+  width: 100%;
+}
+
+.text-contenido-item,
+.codigo-contenido-item {
+  width: 100%;
+}
+
+.text-contenido-item p {
+  color: #c8c8c8;
+  font-size: 0.9rem;
+  margin-top: 2.8rem;
+}
+
+.text-contenido-item button, .form-matrices button{
+  font-family: "Poppins-semibold";
+  font-size: 0.8rem;
+  text-decoration: none;
+  background-color: #8400ff;
+  width: fit-content;
+  padding: 0.5rem 1.5rem;
+  color: #f8f8f8;
+  border-radius: 0.5rem;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  margin: 1rem 0;
+}
+
+.codigo-contenido-item code {
+  background-color: transparent;
+  font-size: 0.8rem;
+}
+
+.about {
+  width: 80%;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: row-reverse;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.text-about {
+  width: 50%;
+}
+
+.text-about p {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-size: 1rem;
+  color: #c8c8c8;
+  gap: .3rem;
+  margin-top: 2rem;
+  text-align: center;
+}
+
+.img-about {
+  width: 50vh;
+  height: 50vh;
+  overflow: hidden;
+  padding: .3rem;
+  border: .2rem solid #8400ff;
+  border-radius: 50%;
+}
+
+.img-about img {
+  width: 100%;
+  border-radius: 50%;
+}
+
+.resultados {
+  display: flex;
+  gap: 3rem;
+}
+
+@media (max-width: 800px) {
+  .about {
+    flex-direction: column;
+    gap: 3rem;
+  }
+
+  .text-about{
+    width: 100%;
+  }
+
+  .img-about {
+    width: 45vh;
+    height: 45vh;
+  }
+
+  .titulo-section {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+  }
+}

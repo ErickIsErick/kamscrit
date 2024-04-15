@@ -1,0 +1,14 @@
+footer {
+    margin-top: 5rem;
+    height: 20vh;
+    background-color: transparent;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+footer h2 {
+    color: #fff;
+    font-family: 'Poppins-bold';
+}
